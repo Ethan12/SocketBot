@@ -12,7 +12,7 @@ public class Sockets {
   public String line = null;
   public String joinMSG = "Hey";
   public BufferedWriter in;
-  public BufferedReader out;
+  public BufferedReade out;
     
   public void sendMessage(String channel, String message) throws IOException{
     in.write("PRIVMSG " + channel + " : " + message + "\r\n");
