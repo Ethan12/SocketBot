@@ -41,15 +41,13 @@ public class Sockets {
         }
       }
         
-    in.write("JOIN " + channel + "\r\n");
+    sendPacket("JOIN", channel);
     sendMessage(channel, joinMSG);
-    in.flush();
         
     while ((line = out.readLine()) != null) {
       if (line.toLowerCase().startsWith("PING ")) {
-          in.write("PONG " + line.substring(5) + "\r\n");
-          in.write("PRIVMSG " + channel + " :ping!\r\n");
-          in.flush();
+          sendPacket("PONG", line.substring(5));
+          sendMessage(channel, " :ping!");
           }else if (line.contains("PRIVMSG " + channel)){
            String[] data = line.split(" ");
            String cmdChar = data[3].substring(1);
@@ -63,8 +61,7 @@ public class Sockets {
           }
          switch (cmdChar.toUpperCase()) {
              case "!SAY":
-                  in.write("PRIVMSG " + channel + " : " + strArgument + "\r\n");
-                  in.flush();
+                  sendMessage(channel, strArgument);
                   break;
              case "!SEARCH":
                   String google = "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&q=";
