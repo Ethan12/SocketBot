@@ -1,5 +1,12 @@
-package com.ethan.SocketBot;
+//  ____             _        _   ____        _   
+// / ___|  ___   ___| | _____| |_| __ )  ___ | |_ 
+// \___ \ / _ \ / __| |/ / _ \ __|  _ \ / _ \| __|
+//  ___) | (_) | (__|   <  __/ |_| |_) | (_) | |_ 
+// |____/ \___/ \___|_|\_\___|\__|____/ \___/ \__|
+//                               By Ethan.
 
+package com.ethan.SocketBot;
+                                               
 import com.google.gson.Gson;
 import java.io.*;
 import java.net.Socket;
